@@ -10,6 +10,10 @@ import java.net.Socket;
 public class Main {
     public static void main(String[] args) {
         try {
+            //Для этой задачи используется Blocking.io, так как вычисления могут
+            //выполняться достаточно долго по сравнению со временем ввода данных
+            //и логично предположить, что результат вычислений может понадобиться
+            //для дальнейшей работы клиента
             ServerSocket servSocket = new ServerSocket(20888);
             while (true) {
                 Socket socket = servSocket.accept();
